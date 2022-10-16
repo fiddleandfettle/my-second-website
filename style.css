@@ -188,6 +188,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     order: 1;
     padding: 1rem 0;
 }
