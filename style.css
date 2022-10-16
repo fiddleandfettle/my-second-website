@@ -207,8 +207,9 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-content: center;
-    margin: 0 0 1rem;
+    align-content: center;    
+    padding: 1rem 0;
+    border-top: solid 1px rgb(211, 211, 211);
 }
 .social_icons {
     height: auto;
