@@ -1,13 +1,13 @@
 *, *:after, *:before { box-sizing: border-box; }
-  
 html { 
     font-family: "Segoe UI", Segoe, Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.375em;
+    line-height: 1.375;
     margin: 0;
     padding: 0;
 }
 body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -19,64 +19,58 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: .5rem 0;
     padding: 0;
-    line-height: 1.375em;
     color: rgb(3, 60, 39);
     text-align: center;
 }
-h1 {font-size: 2em;}
-h2 {font-size: 1.5em; font-family: 'Courier New', Courier, monospace;}
-h3 {font-size: 1.44em;}
-h4 {font-size: 1.25em;}
-h5 {font-size: 1.125em;}  
-h6 {font-size: 1em;}
-
-p {margin: 0 0 .5em; word-wrap: break-word;}
+h1 {font-size: 2rem;}
+h2 {font-size: 1.75rem;}
+h3 {font-size: 1.5rem;}
+h4 {font-size: 1.3rem;}
+h5 {font-size: 1.2rem; font-weight: 400;}  
+h6 {font-size: 1rem; font-weight: 400;}
+p {margin: 0 0 .5rem; word-wrap: break-word;}
+.second_font { 
+    font-family: 'Courier New', Courier, monospace;
+}
+.shouty_text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+}
+span { font-style: italic; font-size: 1.2rem;}
 strong, b {font-weight: 600;}
 i, em, strong, sub, sup {font-style: italic;}
 time {font-weight: 600;}
 blockquote {
-	margin: 1em;
-	border-top: 0.1em solid;
-	border-bottom: 0.1em solid;
-	padding: 0 1em;
+	margin: 1rem;
+	border-top: 0.1rem solid;
+	border-bottom: 0.1rem solid;
+	padding: 0 1rem;
 	font-family: Palatino, Georgia, serif;
 	font-style: italic;
-	font-size: 1.25em;
+	font-size: 1.25rem;
 	line-height: 1.5;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.05rem;
 	border-color: rgb(0, 128, 128);
-	border-radius: 0.25em;
+	border-radius: 0.25rem;
     text-align: center;
 }
-hr {
-    border: none;
-    border-top: 1px solid rgb(0, 128, 128);
-    width: 100%;
-}
+hr { border: none; border-top: 1px solid rgb(0, 128, 128); width: 100%;}
 details {padding: .5rem 0; border-bottom: solid 1px rgba(0, 128, 128);}
 summary {color: rgb(3, 60, 39); font-family: 'Courier New', Courier, monospace; font-weight: 600;}
-.shouty_text {
-    font-size: 1.3em;
-    font-weight: 600;
-    font-style: italic;
-}
+
 /* ------ Code  ------ */
-pre {
-    margin: 0;
-    padding: 0;
-    tab-size: 4;
-    white-space: pre-wrap;
-}
+pre { margin: 0; padding: 0; tab-size: 4; white-space: pre-wrap;}
 kbd {
     border: 1px solid rgb(0, 128, 128);
     border-bottom: 3px solid rgb(0, 85, 85);
     border-radius: 5px;
     padding: 0.1rem 0.4rem;
-  }
+}
+
 /* ------ Links ------ */
 a {
     text-decoration: underline;
-    word-wrap: break-word;
     font-weight: 500;
     color: rgb(102, 51, 153);
 	cursor: pointer;
@@ -84,20 +78,19 @@ a {
 a:hover {text-decoration: none;}
 
 /* ------ Lists - ordered & unordered ------ */
-ul,
-ol {
+ul, ol {
     margin: 0;
     padding: 0;
 	list-style-position: inside;
     align-self: center;
 }
 li {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin: 0;
     padding: .5rem;
 }
 li a {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 600;
     padding: 1rem;
 }
@@ -117,8 +110,7 @@ figcaption {
 }
 
 /* -------- Layout CSS -------- */
-
- header {
+header {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -126,23 +118,26 @@ figcaption {
     color: #008bb6;
     padding: 1rem 2rem 0;
 }
-
+.header_with_img {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 main {
     height: auto;
     width: 100%;
-    min-height: calc(100vh - 277px);
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
     flex-wrap: wrap;
     margin: 0;
     padding: .5rem 1.5rem;
 }
 
 /* -------------------- Layout Panel Options -------------------- */
-
-/* -------- Panels (100% accross in mobile) -------- */
-.text_panel_full,
-.text_panel_side {
+/* -------- Panels (100% across in mobile) -------- */
+.panel_full,
+.panel_side {
     width: 100%;
     height: auto;
     display: flex;
@@ -151,29 +146,32 @@ main {
     align-items: center;
     padding: 0 1rem;
 }
-/* -------- Text Panels (100% accross in mobile) -------- */
-.text_area {
-    width: 80%;
+/* -------- Text Panels (100% across in mobile) -------- */
+.text_panel {
+    width: 100%;
     height: auto;
-    max-width: 800px;
+    max-width: 750px;
     display: flex;
     flex-direction: column;
     align-self: center;
     padding: 0 .5rem;
 }
 @media only screen and (min-width: 48em) { /* 768px */
-
-    /* -------- half panel (50% accross) -------- */
-    .text_panel_side  { 
+    /* -------- half panel (50% across) -------- */
+    .panel_side  { 
         width: 65%; 
         justify-content: space-evenly;
+    }
+    /* -------- Text Panels (100% across in mobile) -------- */
+    .text_panel {
+        width: 80%;
     }
 }
 .center {
     align-items: center;
 }
-/* -------------------- Image Options -------------------- */
 
+/* -------------------- Image Options -------------------- */
 .img_panel_full {
     width: 100%;
     height: auto;
@@ -189,45 +187,65 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    order: 1;
     padding: 1rem 0;
 }
 @media only screen and (min-width: 48em) { /* 768px */
-
     .img_panel_side {
         width: 35%;
-        order: 0;
+        order: -1;
         padding: 0;
     }
 }
-/* -------------------- Footer -------------------- */
+.header_img {
+    margin-right: 1rem;
+}
+.img_responsive_size {
+    width: 100%;
+    height: auto;
+    max-width: max-content;
+}
+.img_spacing {
+    margin: 0 .25rem .5rem;
+}
 
+/* -------------------- Footer -------------------- */
 footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-content: center;    
+    align-content: center;
     padding: 1rem 0;
     border-top: solid 1px rgb(211, 211, 211);
 }
 .social_icons {
     height: auto;
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding: .5rem;
 }
-
 .contact_panel {
-    width: 40%;
+    width: 90%;
     height: auto;
     min-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+@media only screen and (min-width: 48em) { /* 768px */
+    .social_icons {
+        width: 40%;
+    }
+    .contact_panel {
+        width: 40%;
+    }
+}
+.social_icons a {
+    text-decoration: none;
+    color: none;
 }
 .social_icons img {
     transition: all .5s ease-in-out; 
@@ -239,4 +257,4 @@ footer {
     html {
       font-size: calc(14px + 4 * ((100vw - 320px) / 680));
     }
-  }
+}
