@@ -111,7 +111,6 @@ figcaption {
 
 /* -------- Layout CSS -------- */
 header {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,12 +123,11 @@ header {
     flex-wrap: wrap;
 }
 main {
-    height: auto;
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0;
     padding: .5rem 1.5rem;
 }
@@ -138,8 +136,6 @@ main {
 /* -------- Panels (100% across in mobile) -------- */
 .panel_full,
 .panel_side {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -148,9 +144,6 @@ main {
 }
 /* -------- Text Panels (100% across in mobile) -------- */
 .text_panel {
-    width: 100%;
-    height: auto;
-    max-width: 750px;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -165,6 +158,7 @@ main {
     /* -------- Text Panels (100% across in mobile) -------- */
     .text_panel {
         width: 80%;
+        max-width: 750px;
     }
 }
 .center {
@@ -173,16 +167,12 @@ main {
 
 /* -------------------- Image Options -------------------- */
 .img_panel_full {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 1.5rem 0;
 }
 .img_panel_side {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
