@@ -205,16 +205,12 @@ main {
 /* -------------------- Footer -------------------- */
 footer {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-content: center;
     padding: 1rem 0;
     border-top: solid 1px rgb(211, 211, 211);
 }
 .social_icons {
-    height: auto;
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -222,14 +218,15 @@ footer {
     padding: .5rem;
 }
 .contact_panel {
-    width: 90%;
-    height: auto;
-    min-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 @media only screen and (min-width: 48em) { /* 768px */
+    footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
     .social_icons {
         width: 40%;
     }
